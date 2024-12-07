@@ -1,0 +1,3 @@
+const checkPenalite = async () => {
+    
+}
