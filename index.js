@@ -8,9 +8,13 @@ app
     .use(cors())
     .use(express.json({ extended: true }))
 
+// admin routes
+require('./src/routes/admin/changeAdminPass')(app)
+require('./src/routes/admin/editAdmin')(app)
 
 // student routes
 require('./src/routes/student/addStudent')(app)
+require('./src/routes/student/changeStudentPass')(app)
 require('./src/routes/student/deleteStudent')(app)
 require('./src/routes/student/editStudent')(app)
 require('./src/routes/student/getStudentById')(app)

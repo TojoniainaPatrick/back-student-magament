@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
             },
             scheduleItemHour: {
                 type: DataTypes.STRING,
-                get() {
-                    return timeTable[ this.getDataValue('scheduleItemHour')]
-                }
+                // get() {
+                //     return timeTable[ this.getDataValue('scheduleItemHour')]
+                // }
             },
             scheduleItemDay: {
                 type: DataTypes.STRING,
-                get() {
-                    return day[ this.getDataValue('scheduleItemDay')]
-                }
+                // get() {
+                //     return day[ this.getDataValue('scheduleItemDay')]
+                // }
             }
         })
 

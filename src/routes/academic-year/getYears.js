@@ -1,8 +1,8 @@
-const { AcademicYear, Month } = require("../../database/sequelize")
+const { AcademicYear, Month, Level } = require("../../database/sequelize")
 
 module.exports = app => {
     app.get('/year/list', async ( req, res ) => {
-        await AcademicYear.findAll({ include: [ Month ]})
+        await AcademicYear.findAll({ include: [ Month, Level ]})
         .then( years => {
             res.status(200).json({
                 message: 'Liste des années academiques',
