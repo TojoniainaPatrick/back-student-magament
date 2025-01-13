@@ -1,4 +1,4 @@
-const { SchoolFees, Student, PaymentInstallment, Level, Month } = require("../../database/sequelize")
+const { SchoolFees, Student, PaymentInstallment, Level, Month, AcademicYear } = require("../../database/sequelize")
 
 module.exports = app => {
     app.get('/school-fees/list', async ( req, res ) => {
@@ -7,8 +7,11 @@ module.exports = app => {
                 model: Student,
                 include: [ Level ]
             },
-            PaymentInstallment,
-            Month
+            {
+                model: Month,
+                include: [ AcademicYear ]
+            },
+            PaymentInstallment
         ]})
         .then( schoolFees => {
             res.status(200).json({

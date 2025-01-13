@@ -9,22 +9,22 @@ module.exports = app => {
             { where: { currentYear: true }}
         )
         await AcademicYear.create( req.body )
-        .then( newAcademicYear => {
+        .then( async newAcademicYear => {
 
-            months.map( async month => {
+            for ( const month of months ) {
                 await Month.create({
                     monthName: month,
                     academicYearId: newAcademicYear.academicYearId
-                })
-            })
+                });
+            }
 
-            levels.map( async level => {
+            for ( const level of levels ){
                 await Level.create({
                     levelDesignation: level.levelDesignation,
                     monthlySchoolFees: level.monthlySchoolFees,
                     academicYearId: newAcademicYear.academicYearId
                 })
-            })
+            }
 
             res.status(201).json({
                 message: 'Etudiant ajouté avec succès.',
