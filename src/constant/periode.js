@@ -12,9 +12,9 @@ exports.months = [
 ]
 
 exports.levels = [
-    { levelDesignation: "L1", monthlySchoolFees: 150000 },
-    { levelDesignation: "L2", monthlySchoolFees: 150000 },
-    { levelDesignation: "L3", monthlySchoolFees: 150000 }
+    { levelDesignation: "L1", monthlySchoolFees: 50000 },
+    { levelDesignation: "L2", monthlySchoolFees: 50000 },
+    { levelDesignation: "L3", monthlySchoolFees: 50000 }
 ]
 
 exports.timeTable = {
